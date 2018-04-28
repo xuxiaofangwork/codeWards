@@ -1,0 +1,19 @@
+# EditorConfig is awesome: http://EditorConfig.org
+root = true;
+
+# 通用配置;
+[*]
+# 换行符统一使用unix标准;
+end_of_line = lf;
+# 设置文件以一个空白行结尾;
+insert_final_newline = true;
+# 移除换行行首的任意空白字符;
+trim_trailing_whitespace = true;
+# 所有文件统一使用utf-8编码;
+charset = utf-8;
+# 设置所有文件统一使用空格缩进;
+indent_style = space;
+# 设置所有文件采用四格缩进;
+indent_size = 4;
+
+
