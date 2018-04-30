@@ -12,7 +12,7 @@ const http = require('http');
 // 创建服务器实例;
 const server = new http.Server();
 // 声明服务器域名;
-const hostname = '192.168.3.57';
+const hostname = 'xiaodan.server';
 // 声明服务器端口号;
 const port = 10010;
 
