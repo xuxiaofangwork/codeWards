@@ -12,23 +12,27 @@ const routePath = path.resolve(__dirname + '/route');
 const indexPath = path.resolve(routePath + '/index/');
 // 引入index路由表
 const index = require(indexPath + '/index');
+// 引入web路由表
+const web = require(path.resolve(routePath + '/static/') + '/web');
 
 module.exports = {
-	// 所有路由类型;
-	type: [
-		'static',
-		'img',
-		'interface',
-		'index'
-	],
-	// 项目静态资源类型路由
-	static: {},
-	// 储存到数据库中的图片类型路由
-	img: {},
-	//  接口类型路由
-	interface: {},
-	// 索引页地址;
-	index: {
-		index: index
-	}
+    // 所有路由类型;
+    type: [
+        'static',
+        'img',
+        'interface',
+        'index'
+    ],
+    // 项目静态资源类型路由
+    static: {
+        web: web
+    },
+    // 储存到数据库中的图片类型路由
+    img: {},
+    //  接口类型路由
+    interface: {},
+    // 索引页地址;
+    index: {
+        index: index
+    }
 }

@@ -51,7 +51,6 @@
         "keyword-spacing": "error",
         "linebreak-style": "error",
         "no-trailing-spaces": "error",
-        "object-curly-newline": "error",
         "object-curly-spacing": "error",
         "spaced-comment": "error",
         "switch-colon-spacing": "error"

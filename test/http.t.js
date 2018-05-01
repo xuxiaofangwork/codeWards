@@ -8,6 +8,7 @@ const parseRoute = require('../server/parseRoute.js');
 const read = require('../server/readFile.js');
 const checkMethod = require('../server/checkMethod.js');
 const setHead = require('../server/setHead.js');
+const response = require('../server/response.js');
 // 声明服务器域名;
 const hostname = 'xiaodan.server';
 // 声明服务器端口号;
@@ -19,7 +20,7 @@ const server = new http.Server();
 // 启动服务器;
 server.listen(port, hostname);
 // 设置服务器请求监听;
-server.on('request', function(req, response){
+server.on('request', function (req, res) {
     // 解析请求的url;
     let url = new URL(req.url, 'http://' + hostname);
     // let method = req.method;
@@ -27,14 +28,15 @@ server.on('request', function(req, response){
     // let code = 200;
     // let routeOpt = parseURL(url);
     // let routePath = parseRoute(routeOpt);
-    let isok = checkMethod(response, req.method, 'get');
-    if(isok){
-    	console.log(isok);
-    	setHead(response, 200, {'x-fuck': 'bitch'});
-    	response.write('123');
-    	response.end();
-    }
-    	
+    // let isok = checkMethod(response, req.method, 'get');
+    // if (isok) {
+    //     setHead(response, 200, {'x-fuck': 'bitch'});
+    //     response.write('123');
+    //     response.end();
+    // }
+    response(res, {});
+
+
 
 
 
@@ -46,20 +48,20 @@ server.on('request', function(req, response){
 
     // read(routePath).then(
     // 	function(content){
-		  //   response.writeHead(code, {
-		  //   	'Content-Type': 'text/html',
-		  //   	'Access-Control-Allow-Methods': 'post'
-		  //   });
-	   //  	response.write(content);
-	   //  	response.end();
+    //   response.writeHead(code, {
+    //   	'Content-Type': 'text/html',
+    //   	'Access-Control-Allow-Methods': 'post'
+    //   });
+    //  	response.write(content);
+    //  	response.end();
     // 	},
     // 	function(fail){
-		  //   response.writeHead(404, {'Content-Type': 'text/html'});
-	   //  	response.write(JSON.stringify(fail));
-	   //  	response.end();
+    //   response.writeHead(404, {'Content-Type': 'text/html'});
+    //  	response.write(JSON.stringify(fail));
+    //  	response.end();
     // 	}
     // ).catch(function(err){
-	   //  response.writeHead(500, {'Content-Type': 'text/html'});
+    //  response.writeHead(500, {'Content-Type': 'text/html'});
     // 	response.write(err);
     // 	response.end();
     // });
